@@ -157,7 +157,7 @@ The release of the full dataset regarding more entities and UE scenes is 1) stil
 ## 📚 Related Work
 
 - [SynCamMaster](https://jianhongbai.github.io/SynCamMaster/): multi-camera synchronized video generation from diverse viewpoints
-- [StyleMaster](https://zixuan-ye.github.io/stylemaster.github.io/): enable artistic video generation and translation with reference style image
+- [StyleMaster](https://zixuan-ye.github.io/stylemaster): enable artistic video generation and translation with reference style image
 - [MotionCtrl](https://github.com/TencentARC/MotionCtrl): the first to control 3D camera motion and 2D object motion in video generation
 - [TC4D](https://sherwinbahmani.github.io/tc4d/): compositional text-to-4D scene generation with 3D trajectory conditions
 - [Tora](https://ali-videoai.github.io/tora_video/): control 2D motions in trajectory-oriented diffusion transformer for video generation
