@@ -55,7 +55,9 @@ You can also send a kind reminder to us via [email](mailto:3dtrajmaster@googlegr
 
 > **(2) Access to Publicly Available Codebase**
 
-We are currently working on adapting our design to publicly available codebases (e.g., CogVideoX, LTX-Video, Mochi 1, Huanyuan), and we will release the corresponding models once the process is complete.
+We are currently working on adapting our design to publicly available codebases (e.g., CogVideoX, LTX-Video, Mochi 1, Huanyuan). Below is a comparison between CogVideoX and our internal model as of 12.10. We will release an improved version for research purposes shortly.
+
+https://github.com/user-attachments/assets/64ead629-35b2-4424-b771-610a0103022a
 
 ## 📦 360°-Motion Dataset ([Download 🤗](https://huggingface.co/datasets/KwaiVGI/360Motion-Dataset))
  ```
