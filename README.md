@@ -35,7 +35,7 @@
 - **Complex 3D trajectories**: 3D occlusion, rotating in place, 180°/continuous 90° turnings, etc
 - **Fine-grained Entity Prompt**: Change human hair, clothing, gender, figure size, accessory, etc
 
-https://github.com/user-attachments/assets/4925b19b-a3a9-498c-8131-053aae477604
+https://github.com/user-attachments/assets/efe1870f-4168-4aff-98b8-dbd9e3802928
 
 🔥 **Release News**
 - `[2024/12/10]` Release [paper](https://arxiv.org/pdf/2412.07759), [project page](http://fuxiao0719.github.io/projects/3dtrajmaster), [dataset](https://huggingface.co/datasets/KwaiVGI/360Motion-Dataset), and [code](https://github.com/KwaiVGI/3DTrajMaster).
