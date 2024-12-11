@@ -4,7 +4,7 @@
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue) &nbsp;
  <a href='http://fuxiao0719.github.io/projects/3dtrajmaster'><img src='https://img.shields.io/badge/Project-Page-Green'></a> &nbsp;
- <a href='https://drive.google.com/file/d/111Z5CMJZupkmg-xWpV4Tl4Nb7SRFcoWx/view'><img src='https://img.shields.io/badge/arXiv-2412.XXX-b31b1b.svg'></a> &nbsp;
+ <a href='https://arxiv.org/pdf/2412.07759'><img src='https://img.shields.io/badge/arXiv-2412.07759-b31b1b.svg'></a> &nbsp;
  <a href='https://huggingface.co/datasets/KwaiVGI/360Motion-Dataset'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue'></a> &nbsp;
 
 **[Xiao Fu<sup>1 &dagger;</sup>](https://fuxiao0719.github.io/), 
@@ -38,13 +38,13 @@
 https://github.com/user-attachments/assets/4925b19b-a3a9-498c-8131-053aae477604
 
 🔥 **Release News**
-- `[2024/12/XX]` Release [paper](https://drive.google.com/file/d/111Z5CMJZupkmg-xWpV4Tl4Nb7SRFcoWx/view), [project page](http://fuxiao0719.github.io/projects/3dtrajmaster), [dataset](https://huggingface.co/datasets/KwaiVGI/360Motion-Dataset), and [code](https://github.com/KwaiVGI/3DTrajMaster).
+- `[2024/12/10]` Release [paper](https://arxiv.org/pdf/2412.07759), [project page](http://fuxiao0719.github.io/projects/3dtrajmaster), [dataset](https://huggingface.co/datasets/KwaiVGI/360Motion-Dataset), and [code](https://github.com/KwaiVGI/3DTrajMaster).
 
 ## ⚙️ Quick Start
 
 > **(1) Access to Our Internal Video Model**
 
-As per company policy, we may not release the proprietary trained model at this time. However, if you wish to access our internal model, please submit your request via [a shared document](https://docs.google.com/spreadsheets/d/1HL96IS33fyzrDeXTt3hJ80ZsnfRBzDoKh8wparoBAGI/edit?pli=1&gid=0#gid=0) we’ve provided. We will respond to requests with the generated video as quickly as possible.
+As per company policy, we may not release the proprietary trained model at this time. However, if you wish to access our internal model, please submit your request via [a shared document](https://docs.google.com/spreadsheets/d/1HL96IS33fyzrDeXTt3hJ80ZsnfRBzDoKh8wparoBAGI/edit?pli=1&gid=0#gid=0) we’ve provided, or directly send us [email](mailto:3dtrajmaster@googlegroups.com) for request. We will respond to requests with the generated video as quickly as possible.
 Please ensure your request includes the following:
 
 1. Entity prompts (1–3, with a maximum of 42 tokens, approximately 20 words per entity)
@@ -158,11 +158,11 @@ The release of the full dataset regarding more entities and UE scenes is 1) stil
 
 ## 📚 Related Work
 
-- [SynCamMaster](https://jianhongbai.github.io/SynCamMaster/): multi-camera synchronized video generation from diverse viewpoints
-- [StyleMaster](https://zixuan-ye.github.io/stylemaster): enable artistic video generation and translation with reference style image
 - [MotionCtrl](https://github.com/TencentARC/MotionCtrl): the first to control 3D camera motion and 2D object motion in video generation
 - [TC4D](https://sherwinbahmani.github.io/tc4d/): compositional text-to-4D scene generation with 3D trajectory conditions
 - [Tora](https://ali-videoai.github.io/tora_video/): control 2D motions in trajectory-oriented diffusion transformer for video generation
+- [SynCamMaster](https://jianhongbai.github.io/SynCamMaster/): multi-camera synchronized video generation from diverse viewpoints
+- [StyleMaster](https://zixuan-ye.github.io/stylemaster): enable artistic video generation and translation with reference style image
 
 ####
 
@@ -172,7 +172,7 @@ If you find this work helpful, please consider citing:
 @article{fu20243dtrajmaster,
     author  = {Fu, Xiao and Liu, Xian and Wang, Xintao and Peng, Sida and Xia, Menghan and Shi, Xiaoyu and Yuan, Ziyang and Wan, Pengfei and Zhang, Di and Lin, Dahua},
     title   = {3DTrajMaster: Mastering 3D Trajectory for Multi-Entity Motion in Video Generation},
-    journal = {arXiv preprint arXiv:2412.XXX},
+    journal = {arXiv preprint arXiv:2412.07759},
     year    = {2024}
 }
 ```
