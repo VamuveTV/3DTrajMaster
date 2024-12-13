@@ -44,14 +44,12 @@ https://github.com/user-attachments/assets/efe1870f-4168-4aff-98b8-dbd9e3802928
 
 > **(1) Access to Our Internal Video Model**
 
-As per company policy, we may not release the proprietary trained model at this time. However, if you wish to access our internal model, please submit your request via [a shared document](https://docs.google.com/spreadsheets/d/1HL96IS33fyzrDeXTt3hJ80ZsnfRBzDoKh8wparoBAGI/edit?pli=1&gid=0#gid=0) we’ve provided, or directly send us [email](mailto:3dtrajmaster@googlegroups.com) for request. We will respond to requests with the generated video as quickly as possible.
+As per company policy, we may not release the proprietary trained model at this time. However, if you wish to access our internal model, please submit your request via (1) [a shared document](https://docs.google.com/spreadsheets/d/1HL96IS33fyzrDeXTt3hJ80ZsnfRBzDoKh8wparoBAGI/edit?pli=1&gid=0#gid=0) or (2) directly send us via email (`lemonaddie0909@gmail.com`) for request. We will respond to requests with the generated video as quickly as possible.
 Please ensure your request includes the following:
 
 1. Entity prompts (1–3, with a maximum of 42 tokens, approximately 20 words per entity)
 2. Location prompt
 3. Trajectory template (You can refer to the trajectory template in our released 360°-Motion Dataset, or simply describe new ones via text)
-
-You can also send a kind reminder to us via [email](mailto:3dtrajmaster@googlegroups.com) to upload the video.
 
 > **(2) Access to Publicly Available Codebase**
 
@@ -170,9 +168,9 @@ The release of the full dataset regarding more entities and UE scenes is 1) stil
 If you find this work helpful, please consider citing:
 ```BibTeXw
 @article{fu20243dtrajmaster,
-    author  = {Fu, Xiao and Liu, Xian and Wang, Xintao and Peng, Sida and Xia, Menghan and Shi, Xiaoyu and Yuan, Ziyang and Wan, Pengfei and Zhang, Di and Lin, Dahua},
-    title   = {3DTrajMaster: Mastering 3D Trajectory for Multi-Entity Motion in Video Generation},
-    journal = {arXiv preprint arXiv:2412.07759},
-    year    = {2024}
+  title={3DTrajMaster: Mastering 3D Trajectory for Multi-Entity Motion in Video Generation},
+  author={Fu, Xiao and Liu, Xian and Wang, Xintao and Peng, Sida and Xia, Menghan and Shi, Xiaoyu and Yuan, Ziyang and Wan, Pengfei and Zhang, Di and Lin, Dahua},
+  journal={arXiv preprint arXiv:2412.07759},
+  year={2024}
 }
 ```
