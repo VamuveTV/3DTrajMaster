@@ -14,8 +14,8 @@ if __name__ == '__main__' :
 
     H = 480
     W = 720
-    intrinsics = np.array([[1000.,0.],
-                           [0., 1000.]])
+    intrinsics = np.array([[1060.606,0.],
+                           [0., 1060.606]])
     
     cam_path = "traj_vis/Hemi12_transforms.json"
     location_path = "traj_vis/location_data_desert.json"

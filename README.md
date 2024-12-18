@@ -81,9 +81,12 @@ https://github.com/user-attachments/assets/64ead629-35b2-4424-b771-610a0103022a
 |-------------------------|-------------|-------------------------|-------------|
 | **Video Resolution**    | (1) 480×720 (2) 384×672    |       **Frames/Duration/FPS**        | 99/3.3s/30  |
 | **UE Scenes**    | 6 (1 desert+5 HDRIs)  |       **Video Samples**        | (1) 36,000 (2) 36,000 |
+| **Camera Intrinsics (fx,fy)**    | (1) 1060.606 (2) 989.899 |       **Sensor Width/Height (mm)**        | (1) 23.76/15.84 (2) 23.76/13.365 |
 | **Hemi12_transforms.json**    | 12 surrounding cameras |      **CharacterInfo.json**        | entity prompts  |
 | **RefPic**    | 50 animals     |       **1/2/3 Trajectory Templates**       | 36/60/35 (121 in total) |
 | **{D/N}_{locX}** | {Day/Night}_{LocationX} |  **{C}_ {XX}_{35mm}** | {Close-Up Shot}_{Cam. Index(1-12)} _{Focal Length}|
+
+**Note that** the resolution of 384×672 refers to our internal video diffusion resolution. In fact, we render the video at a resolution of 378×672 (aspect ratio 9:16), with a 3-pixel black border added to both the top and bottom.
 
 > **(2) Difference with the Dataset to Train on Our Internal Video Diffusion Model**
 
