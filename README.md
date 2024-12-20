@@ -53,7 +53,7 @@ Please ensure your request includes the following:
 
 > **(2) Access to Publicly Available Codebase**
 
-We are currently working on adapting our design to publicly available codebases (e.g., CogVideoX, LTX-Video, Mochi 1, Huanyuan). Below is a comparison between CogVideoX and our internal model as of 12.10. We will release an improved version for research purposes shortly.
+We are currently working on adapting our design to publicly available codebases (e.g., CogVideoX, LTX-Video, Mochi 1, Huanyuan). Below is a comparison between CogVideoX (w/o domain adaptor) and our internal video model as of 12.10. We will release an improved version for research purposes shortly.
 
 https://github.com/user-attachments/assets/64ead629-35b2-4424-b771-610a0103022a
 
