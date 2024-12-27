@@ -53,9 +53,40 @@ Please ensure your request includes the following:
 
 > **(2) Access to Publicly Available Codebase**
 
-We are currently working on adapting our design to publicly available codebases (e.g., CogVideoX, LTX-Video, Mochi 1, Huanyuan). Below is a comparison between CogVideoX (w/o domain adaptor) and our internal video model as of 12.10. We will release an improved version for research purposes shortly.
+We are currently working on adapting our design to publicly available codebases (e.g., CogVideoX, LTX-Video, Mochi 1, Huanyuan). Below is a comparison between CogVideoX (w/o domain adaptor) and our internal video model as of 12.10. We will release an improved version for research purposes **no later than one week after paper acceptance**.
 
 https://github.com/user-attachments/assets/64ead629-35b2-4424-b771-610a0103022a
+
+#### Code Snapshot (CogVideoX-5B)
+The following code showcases the core components of 3DTrajMaster, namely the plug-and-play 3D-motion grounded object injector.
+
+```python
+# 1. norm & modulate
+norm_hidden_states, norm_empty_encoder_hidden_states, gate_msa, enc_gate_msa = self.norm1(hidden_states, empty_encoder_hidden_states, temb)
+bz, N_visual, dim = norm_hidden_states.shape
+max_entity_num = 3
+_, entity_num, num_frames, _ = pose_embeds.shape
+
+# 2. pair-wise fusion of trajectory and entity
+attn_input = self.pose_null_positive_feature.repeat(bz, max_entity_num, 50, num_frames, 1)
+pose_embeds = self.pose_fuse_layer(pose_embeds)
+attn_input[:,:entity_num,:,:,:] = pose_embeds.unsqueeze(-3) + prompt_entities_embeds.unsqueeze(-2)
+attn_input = torch.cat((
+    rearrange(norm_hidden_states, "b (n t) d -> b n t d",n=num_frames), 
+    rearrange(attn_input, "b n t f d -> b f (n t) d")),
+    dim=2
+).flatten(1,2)
+
+# 3. gated self-attention
+attn_hidden_states, attn_encoder_hidden_states = self.pose_attn1(
+    hidden_states=attn_input,
+    encoder_hidden_states=norm_empty_encoder_hidden_states,
+    image_rotary_emb=image_rotary_emb,
+)
+attn_hidden_states = attn_hidden_states[:,:N_visual,:]
+
+hidden_states = hidden_states + gate_msa * attn_hidden_states
+```
 
 ## 📦 360°-Motion Dataset ([Download 🤗](https://huggingface.co/datasets/KwaiVGI/360Motion-Dataset))
  ```
