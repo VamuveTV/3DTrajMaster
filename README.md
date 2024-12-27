@@ -68,7 +68,7 @@ max_entity_num = 3
 _, entity_num, num_frames, _ = pose_embeds.shape
 
 # 2. pair-wise fusion of trajectory and entity
-attn_input = self.pose_null_positive_feature.repeat(bz, max_entity_num, 50, num_frames, 1)
+attn_input = self.attn_null_feature.repeat(bz, max_entity_num, 50, num_frames, 1)
 pose_embeds = self.pose_fuse_layer(pose_embeds)
 attn_input[:,:entity_num,:,:,:] = pose_embeds.unsqueeze(-3) + prompt_entities_embeds.unsqueeze(-2)
 attn_input = torch.cat((
@@ -78,7 +78,7 @@ attn_input = torch.cat((
 ).flatten(1,2)
 
 # 3. gated self-attention
-attn_hidden_states, attn_encoder_hidden_states = self.pose_attn1(
+attn_hidden_states, attn_encoder_hidden_states = self.attn1_injector(
     hidden_states=attn_input,
     encoder_hidden_states=norm_empty_encoder_hidden_states,
     image_rotary_emb=image_rotary_emb,
