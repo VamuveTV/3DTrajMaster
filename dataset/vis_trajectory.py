@@ -35,15 +35,20 @@ if __name__ == '__main__' :
     for i, key in enumerate(data.keys()):
         if "C_" in key:
             cam_poses.append(parse_matrix(data[key]))
+
     cam_poses = np.stack(cam_poses)
     cam_poses = np.transpose(cam_poses, (0,2,1))
     cam_poses[:,:3,3] /= 100.
+    cam_poses = cam_poses[:,:,[1,2,0,3]]
     relative_pose = np.linalg.inv(cam_poses[0])
+    cam_poses = relative_pose @ cam_poses
+    # convert right-hand coord to left-hand coord
+    cam_poses[:,:3,3][:,1] *= -1.
+    cam_poses[:,:,:2] *= -1.
+
     cam_num = len(cam_poses)
     for idx in range(cam_num):
         cam_pose = cam_poses[idx]
-        cam_pose = cam_pose[:, [1,2,0,3]]
-        cam_pose = relative_pose @ cam_pose
         cam_points_vis = get_cam_points_vis(W, H, intrinsics, cam_pose, [0.4, 0.4, 0.4], frustum_length=1.)
         vis_all.append(cam_points_vis)
 
@@ -59,12 +64,14 @@ if __name__ == '__main__' :
         obj_poses.append(parse_matrix(data[key][0]['matrix']))
     obj_poses = np.stack(obj_poses)
     obj_poses = np.transpose(obj_poses, (0,2,1))
-
     obj_poses[:,:3,3] -= translation
     obj_poses[:,:3,3] /= 100.
     obj_poses = obj_poses[:, :, [1,2,0,3]]
     obj_poses = relative_pose @ obj_poses
     obj_poses = obj_poses[frame_indices]
+    # convert right-hand coord to left-hand coord
+    obj_poses[:,:3,3][:,1] *= -1.
+    obj_poses[:,:,:2] *= -1.
 
     obj_num = len(obj_poses)
     for idx in range(obj_num):
@@ -86,13 +93,16 @@ if __name__ == '__main__' :
         obj_poses = obj_poses[:, :, [1,2,0,3]]
         obj_poses = relative_pose @ obj_poses
         obj_poses = obj_poses[frame_indices]
+        # convert right-hand coord to left-hand coord
+        obj_poses[:,:3,3][:,1] *= -1.
+        obj_poses[:,:,:2] *= -1.
         obj_num = len(obj_poses)
         for idx in range(obj_num):
             obj_pose = obj_poses[idx]
             if (idx % 5 == 0) :
                 cam_points_vis = get_cam_points_vis(W, H, intrinsics, obj_pose, [0., 0.8,0.], frustum_length=0.5)
                 vis_all.append(cam_points_vis)
-        
+
     if len(data[key])>=3:
         with open('traj_vis/'+video_name, 'r') as file:
             data = json.load(file)
@@ -106,6 +116,9 @@ if __name__ == '__main__' :
         obj_poses = obj_poses[:, :, [1,2,0,3]]
         obj_poses = relative_pose @ obj_poses
         obj_poses = obj_poses[frame_indices]
+        # convert right-hand coord to left-hand coord
+        obj_poses[:,:3,3][:,1] *= -1.
+        obj_poses[:,:,:2] *= -1.
         obj_num = len(obj_poses)
         for idx in range(obj_num):
             obj_pose = obj_poses[idx]
@@ -115,6 +128,5 @@ if __name__ == '__main__' :
 
     # vis coordinates
     axis = open3d.geometry.TriangleMesh.create_coordinate_frame(size=2, origin=[0,0,0])
-    # vis_all.append(axis)
     
     open3d.visualization.draw_geometries(vis_all)

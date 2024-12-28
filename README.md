@@ -144,7 +144,7 @@ The release of the full dataset regarding more entities and UE scenes is 1) stil
     ```bash
     python vis_trajecotry.py
     ```
-    After running the visualization script, you will get an interactive window like this.
+    After running the visualization script, you will get an interactive window like this. Note that we have converted the right-handed coordinate system (Open3D) to the left-handed coordinate system in order to better align with the motion trajectory of the video
 
     <img src="imgs/vis_objstraj.png" width="350" />
 
